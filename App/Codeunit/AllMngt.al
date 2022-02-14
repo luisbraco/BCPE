@@ -6,7 +6,7 @@ codeunit 50101 MngtBC
     end;
 
     var
-        TempBlob: Record TempBlob;
+        TempBlob: Record "Upgrade Blob Storage";
         Response: Text;
         InStr: InStream;
         HttpWebRequest: DotNet HttpWebRequest;
