@@ -76,6 +76,9 @@ codeunit 50101 MngtBC
         SetRequest: Text;
         GLSetup: Record "General Ledger Setup";
         xToken: Text;
+        cujs: Codeunit "Json Text Reader/Writer";
+        cujs1: Codeunit "JSON Management";
+        js: Record "JSON Buffer" temporary;
 
         EndPointTxt: TextConst ENU = 'https://nominapruebas.cobra.com.co:28080/NominaWEB/services/authentication';
         MediaTypeText: TextConst ENU = '{"username": "%1","password": "%2"}';
@@ -142,6 +145,8 @@ codeunit 50101 MngtBC
             InStr.READTEXT(ContentLine);
             Response += '' + ContentLine;
         END;
+
+        //cujs.ReadJSonToJSonBuffer(Response, js);
 
         IF pQuery <> 'AUTHENTICATE' THEN
             Response := COPYSTR(Response, STRPOS(Response, '"v"'), STRLEN(Response));
