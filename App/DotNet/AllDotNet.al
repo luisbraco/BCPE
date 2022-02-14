@@ -15,24 +15,18 @@ dotnet
         Version = '4.0.0.0';
         Culture = 'neutral';
         PublicKeyToken = 'b77a5c561934e089';
-        //type(System.Data.DataSet; SQLDataSet) { }
-        //type(System.Data.SqlClient.SqlDataAdapter; SQLDataAdapter) { }
     }
     assembly(System)
     {
         Version = '4.0.0.0';
         Culture = 'neutral';
         PublicKeyToken = 'b77a5c561934e089';
-
-        //type(System.Net.HttpWebRequest; HttpWebRequest) { }
-        //type(System.Net.HttpWebResponse; HttpWebResponse) { }
     }
     assembly(mscorlib)
     {
         Version = '4.0.0.0';
         Culture = 'neutral';
         PublicKeyToken = 'b77a5c561934e089';
-
-        //type(System.IO.StreamWriter; StreamWriters) { }
     }
 }
+
