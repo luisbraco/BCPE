@@ -191,7 +191,7 @@ codeunit 50101 MngtBC
     procedure ConsumeWSSUNATDownFile(pRuc: Text[30]): Boolean
     var
     //Automation  'Microsoft XML, v6.0'.XMLHTTP60;
-
     begin
+
     end;
 }
