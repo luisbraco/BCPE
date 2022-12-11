@@ -9,12 +9,12 @@ codeunit 50101 MngtBC
         TempBlob: Record "Upgrade Blob Storage";
         Response: Text;
         InStr: InStream;
-        HttpWebRequest: DotNet HttpWebRequest;
-        HttpWebResponse: DotNet HttpWebResponse;
-        StreamWriter: DotNet StreamWriter;
-        ServicePointManager: DotNet ServicePointManager;
-        SecurityProtocolType: DotNet SecurityProtocolType;
-        Encoding: DotNet Encoding;
+    // HttpWebRequest: DotNet HttpWebRequest;
+    // HttpWebResponse: DotNet HttpWebResponse;
+    // StreamWriter: DotNet StreamWriter;
+    // ServicePointManager: DotNet ServicePointManager;
+    // SecurityProtocolType: DotNet SecurityProtocolType;
+    // Encoding: DotNet Encoding;
 
     procedure ReplaceString(String: Text; FindWhat: Text; ReplaceWith: Text) NewString: Text
     begin
@@ -114,37 +114,37 @@ codeunit 50101 MngtBC
                 END;
         END;
 
-        ServicePointManager.SecurityProtocol(SecurityProtocolType.Tls12);
-        HttpWebRequest := HttpWebRequest.Create(SetEndPoint);
+        // ServicePointManager.SecurityProtocol(SecurityProtocolType.Tls12);
+        // HttpWebRequest := HttpWebRequest.Create(SetEndPoint);
 
-        IF pQuery IN ['INSERT', 'INACTIVATE'] THEN BEGIN
-            IF Json.GET('T') THEN
-                xToken := FORMAT(Json.Value);// + Json.Value2);
+        // IF pQuery IN ['INSERT', 'INACTIVATE'] THEN BEGIN
+        //     IF Json.GET('T') THEN
+        //         xToken := FORMAT(Json.Value);// + Json.Value2);
 
-            HttpWebRequest.Headers.Add('token', xToken);
-        END;
+        //     HttpWebRequest.Headers.Add('token', xToken);
+        // END;
 
-        HttpWebRequest.Method := 'POST';
-        HttpWebRequest.ContentType := 'application/json;charset=utf-8';
-        HttpWebRequest.MediaType := 'application/json';
+        // HttpWebRequest.Method := 'POST';
+        // HttpWebRequest.ContentType := 'application/json;charset=utf-8';
+        // HttpWebRequest.MediaType := 'application/json';
 
-        StreamWriter := StreamWriter.StreamWriter(HttpWebRequest.GetRequestStream, Encoding.GetEncoding('iso8859-1'));
-        StreamWriter.Write(SetRequest);
-        StreamWriter.Flush;
-        StreamWriter.Close;
-        StreamWriter.Dispose;
+        // StreamWriter := StreamWriter.StreamWriter(HttpWebRequest.GetRequestStream, Encoding.GetEncoding('iso8859-1'));
+        // StreamWriter.Write(SetRequest);
+        // StreamWriter.Flush;
+        // StreamWriter.Close;
+        // StreamWriter.Dispose;
 
-        TempBlob.Blob.CREATEINSTREAM(InStr);
+        // TempBlob.Blob.CREATEINSTREAM(InStr);
 
-        CLEAR(HttpWebResponse);
-        HttpWebResponse := HttpWebRequest.GetResponse;
-        HttpWebResponse.GetResponseStream.CopyTo(InStr);
+        // CLEAR(HttpWebResponse);
+        // HttpWebResponse := HttpWebRequest.GetResponse;
+        // HttpWebResponse.GetResponseStream.CopyTo(InStr);
 
-        CLEAR(Response);
-        WHILE NOT InStr.EOS DO BEGIN
-            InStr.READTEXT(ContentLine);
-            Response += '' + ContentLine;
-        END;
+        // CLEAR(Response);
+        // WHILE NOT InStr.EOS DO BEGIN
+        //     InStr.READTEXT(ContentLine);
+        //     Response += '' + ContentLine;
+        // END;
 
         //cujs.ReadJSonToJSonBuffer(Response, js);
 
@@ -182,10 +182,10 @@ codeunit 50101 MngtBC
                     EXIT(Json.Value + ', Codigo: ' + pcodigo);
         END;
 
-        CLEAR(ServicePointManager);
-        CLEAR(HttpWebRequest);
-        CLEAR(StreamWriter);
-        CLEAR(HttpWebResponse);
+        // CLEAR(ServicePointManager);
+        // CLEAR(HttpWebRequest);
+        // CLEAR(StreamWriter);
+        // CLEAR(HttpWebResponse);
     end;
 
     procedure ConsumeWSSUNATDownFile(pRuc: Text[30]): Boolean

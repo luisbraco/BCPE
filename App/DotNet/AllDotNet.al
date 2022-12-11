@@ -1,13 +1,3 @@
-//'System.Data, Version=2.0.0.0, 
-//Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.Data.SqlClient.SqlConnection
-
-//SQLReaderL: DotNet  'System.Data, Version=2.0.0.0, 
-//Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.Data.SqlClient.SqlDataReader;
-//SQLParameterL: DotNet  'System.Data, Version=2.0.0.0, 
-//Culture=neutral, PublicKeyToken=b77a5c561934e089'.System.Data.SqlClient.SqlParameter;
-//'System.Data, Version=2.0.0.0, Culture=neutral, 
-//PublicKeyToken=b77a5c561934e089'.System.Data.SqlClient.SqlConnection
-
 dotnet
 {
     assembly(System.Data)
@@ -15,6 +5,7 @@ dotnet
         Version = '4.0.0.0';
         Culture = 'neutral';
         PublicKeyToken = 'b77a5c561934e089';
+        //type(TypeName;AliasName){}
     }
     assembly(System)
     {
@@ -29,4 +20,3 @@ dotnet
         PublicKeyToken = 'b77a5c561934e089';
     }
 }
-

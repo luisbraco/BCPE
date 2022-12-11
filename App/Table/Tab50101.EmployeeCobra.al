@@ -1,4 +1,4 @@
-table 50101 "Employee Cobra"
+table 50101 "Employee LBC"
 {
     DataClassification = ToBeClassified;
 
